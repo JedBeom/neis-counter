@@ -1,3 +1,4 @@
+<!doctype html>
 <html lang="ko">
     <head>
 <head>
@@ -7,7 +8,7 @@
     <meta name="description" content="나이스(NEIS) 글자수 계산기">
     <meta property="og:title" content="나이스(NEIS) 글자수 계산기">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://hjh010501.github.io/neis-counter">
+    <meta property="og:url" content="https://jedbeom.github.io/neis-counter">
     <meta property="og:locale" content="ko_KR">
     <meta property="og:description" content="나이스(NEIS) 글자수 계산기">
     <meta property="og:image" content="ogimage.png">
@@ -17,16 +18,6 @@
     <link rel="stylesheet" type="text/css" href="main.css">
     <script async defer src="https://buttons.github.io/buttons.js"></script>
     <title>나이스(NEIS) 글자수 계산기</title>
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-145929593-1"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-    
-      gtag('config', 'UA-145929593-1');
-    </script>
-
     </head>
     <body>
         <div class="center">
@@ -54,12 +45,11 @@
                     </tr>
             </table>
             <div id="result" class="result">공백 제외 0자, 공백 포함 0자, 0바이트</div>
-            <span style="font-size: 12pt; color:#aaa; font-family: 'Noto Sans KR'; letter-spacing: -1.25px; float: right; text-align: right;">영어, 숫자, 특수문자, 띄어쓰기 1바이트 / 엔터키 2바이트 / 한글 3바이트<br>해당 사이트 제작자가 20년도 졸업생인데, 생활기록부 입력 제한이 바뀐 것으로 알고 있어 지웠습니다.<br>PR 로 내용을 보내주시면 반영하겠습니다!<br>반영해주신 분들: <a href="https://github.com/Dongyeongkim" target="_blank">김동영</a>, <a href="https://github.com/rycont" target="_blank">정한(RyCont)</a>, <a href="https://github.com/cokia" target="_blank">한우영</a>, <a href="https://github.com/hajin-chung" target="_blank">정하진</a>, <a href="https://github.com/mcgun1234" target="_blank">최수현</a></span>
+            <span style="font-size: 12pt; color:#aaa; font-family: 'Noto Sans KR'; letter-spacing: -1.25px; float: right; text-align: right;">영어, 숫자, 특수문자, 띄어쓰기 1바이트 / 엔터키 2바이트 / 한글 3바이트</span>
         </div>
         <div class="footbar">
         <div class="footbar_content">
-            <span style="text-align: left;">👨‍💻 by <a href="https://kidevelop.io">kidevelop</a></span>
-            <span style="float: right;"><a class="github-button" href="https://github.com/hjh010501/neis-counter" data-icon="octicon-star" data-size="large" data-show-count="true" aria-label="Star hjh010501/neis-counter on GitHub">Star</a></span>
+            <span style="text-align: left;">Original work by <a href="https://kidevelop.io">kidevelop</a></span>
         </div>
         </div>
         <script>
@@ -72,7 +62,6 @@
         }
 
         function counter(content) {
-            console.log(content);
             localStorage.setItem("save", content);
             var english = content.replace(/[ㄱ-ㅎ|ㅏ-ㅣ|가-힣]/gi, "").replace(/[0-9]/gi, "").replace(/[\{\}\[\]\/?.,;:|\)*~`!^\-_+<>@\#$%&\\\=\(\'\"]/gi, "").replace(/\s/gi, "").replace(/\s/gi, "").replace(/(\r\n\t|\n|\r\t)/gm,"");;
             var korean = content.replace(/[a-zA-Z]/gi, "").replace(/[0-9]/gi, "").replace(/[\{\}\[\]\/?.,;:|\)*~`!^\-_+<>@\#$%&\\\=\(\'\"]/gi, "").replace(/\s/gi, "").replace(/(\r\n\t|\n|\r\t)/gm,"");
