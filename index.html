@@ -1,113 +1,113 @@
 <!doctype html>
 <html lang="ko">
-    <head>
 <head>
     <meta http-equiv="content-type" content="text/html; charset=utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
-    <meta name="description" content="나이스(NEIS) 글자수 계산기">
-    <meta property="og:title" content="나이스(NEIS) 글자수 계산기">
+    <meta name="description" content="나이스(NEIS) 글자수 계산기++">
+    <meta property="og:title" content="나이스(NEIS) 글자수 계산기++">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://jedbeom.github.io/neis-counter">
     <meta property="og:locale" content="ko_KR">
-    <meta property="og:description" content="나이스(NEIS) 글자수 계산기">
+    <meta property="og:description" content="나이스 바이트, 손쉽게 계산하자">
     <meta property="og:image" content="ogimage.png">
     <meta property="og:image:type" content="image/png">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
     <link rel="stylesheet" type="text/css" href="main.css">
-    <script async defer src="https://buttons.github.io/buttons.js"></script>
-    <title>나이스(NEIS) 글자수 계산기</title>
-    </head>
-    <body>
-        <div class="center">
-            <div class="title">🍴나이스(NEIS) 글자수 계산기 (포크 버전)</div>
-            <p>원본 사이트의 이전 버전을 유지합니다. (맞춤법 기능 X)</p>
-            <div class="title_underbar_wrapper">
-            <div class="title_underbar"></div>
-            </div>
-            <textarea oninput="onInput()" id="counter" class="counter" cols="40" rows="5"></textarea>
-            <table>
-                    <tr>
-                        <th>항목</td>
-                        <th>자율활동</th>
-                        <th>동아리활동</th>
-                        <th>진로활동</th>
-                        <th>교과세특</th>
-                        <th>개인별세특</th>
-                    </tr>
-                    <tr>
-                        <td>바이트</td>
-                        <td>1500Bytes</td>
-                        <td>1500Bytes</td>
-                        <td>2100Bytes</td>
-                        <td>1500Bytes</td>
-                        <td>1500Bytes</td>
-                    </tr>
-            </table>
-            <div id="result">
-                <p id="count-selection"></p>
-                <p id="count-all">0자, 0바이트</p>
-            </div>
-            <span style="font-size: 12pt; color:#aaa; font-family: 'Noto Sans KR'; letter-spacing: -1.25px; float: right; text-align: right;">영어, 숫자, 특수문자, 띄어쓰기 1바이트 / 엔터키 2바이트 / 한글 3바이트</span>
+    <title>나이스(NEIS) 글자수 계산기++</title>
+</head>
+<body>
+    <div class="center">
+        <header>
+            <h1>🍴나이스(NEIS) 글자수 계산기++</h1>
+            <p>드래그해서 글씨를 선택해 보세요.</p>
+        </header>
+        <div class="title_underbar_wrapper">
+        <div class="title_underbar"></div>
         </div>
-        <div class="footbar">
-        <div class="footbar_content">
-            <span style="text-align: left;">Original work by <a href="https://github.com/hjh010501/">kidevelop</a></span> |
-            <span style="text-align: left;">Fork by <a href="https://github.com/JedBeom/">JedBeom</a></span>
+        <textarea oninput="onInput()" id="counter"></textarea>
+        <table>
+                <tr>
+                    <th>항목</td>
+                    <th>자율활동</th>
+                    <th>동아리활동</th>
+                    <th>진로활동</th>
+                    <th>교과세특</th>
+                    <th>개인별세특</th>
+                </tr>
+                <tr>
+                    <td>바이트</td>
+                    <td>1500Bytes</td>
+                    <td>1500Bytes</td>
+                    <td>2100Bytes</td>
+                    <td>1500Bytes</td>
+                    <td>1500Bytes</td>
+                </tr>
+        </table>
+        <div id="result">
+            <p id="count-selection"></p>
+            <p id="count-all">0자, 0바이트</p>
         </div>
-        </div>
-        <script>
-        var textarea = document.getElementById('counter')
-        var countAll = document.getElementById('count-all')
-        var countSelection = document.getElementById('count-selection')
+        <span style="font-size: 12pt; color:#aaa; font-family: 'Noto Sans KR'; letter-spacing: -1.25px; float: right; text-align: right;">영어, 숫자, 특수문자, 띄어쓰기 1바이트 / 엔터키 2바이트 / 한글 3바이트</span>
+    </div>
+    <div class="footbar">
+    <div class="footbar_content">
+        <span style="text-align: left;">Original work by <a href="https://github.com/hjh010501/">kidevelop</a></span> |
+        <span style="text-align: left;">Fork by <a href="https://github.com/JedBeom/">JedBeom</a></span>
+    </div>
+    </div>
+    <script>
+    var textarea = document.getElementById('counter')
+    var countAll = document.getElementById('count-all')
+    var countSelection = document.getElementById('count-selection')
 
-        function init() {
-            let content = localStorage.getItem("save")
-            if (content) {
-                textarea.value = content
-                onInput()
-            }
+    function init() {
+        let content = localStorage.getItem("save")
+        if (content) {
+            textarea.value = content
+            onInput()
         }
+    }
 
-        function countByte(content) {
-            var english = content.replace(/[ㄱ-ㅎ|ㅏ-ㅣ|가-힣]/gi, "").replace(/[0-9]/gi, "").replace(/[\{\}\[\]\/?.,;:|\)*~`!^\-_+<>@\#$%&\\\=\(\'\"]/gi, "").replace(/\s/gi, "").replace(/\s/gi, "").replace(/(\r\n\t|\n|\r\t)/gm,"");;
-            var korean = content.replace(/[a-zA-Z]/gi, "").replace(/[0-9]/gi, "").replace(/[\{\}\[\]\/?.,;:|\)*~`!^\-_+<>@\#$%&\\\=\(\'\"]/gi, "").replace(/\s/gi, "").replace(/(\r\n\t|\n|\r\t)/gm,"");
-            var number = content.replace(/[a-zA-Z]/gi, "").replace(/[ㄱ-ㅎ|ㅏ-ㅣ|가-힣]/gi, "").replace(/[\{\}\[\]\/?.,;:|\)*~`!^\-_+<>@\#$%&\\\=\(\'\"]/gi, "").replace(/\s/gi, "").replace(/(\r\n\t|\n|\r\t)/gm,"");
-            var special = content.replace(/[a-zA-Z]/gi, "").replace(/[ㄱ-ㅎ|ㅏ-ㅣ|가-힣]/gi, "").replace(/[0-9]/gi, "").replace(/\s/gi, "").replace(/(\r\n\t|\n|\r\t)/gm,"");
-            var space =  content.replace(/[a-zA-Z]/gi, "").replace(/[ㄱ-ㅎ|ㅏ-ㅣ|가-힣]/gi, "").replace(/[\{\}\[\]\/?.,;:|\)*~`!^\-_+<>@\#$%&\\\=\(\'\"]/gi, "").replace(/[0-9]/gi, "").replace(/(\r\n\t|\n|\r\t)/gm,"");
-            var line = content.replace(/[a-zA-Z]/gi, "").replace(/[ㄱ-ㅎ|ㅏ-ㅣ|가-힣]/gi, "").replace(/[\{\}\[\]\/?.,;:|\)*~`!^\-_+<>@\#$%&\\\=\(\'\"]/gi, "").replace(/[0-9]/gi, "").replace(/ /gi, "");
-            return english.length + (korean.length * 3) +  number.length + special.length + space.length + (line.length * 2);
+    function countByte(content) {
+        var english = content.replace(/[ㄱ-ㅎ|ㅏ-ㅣ|가-힣]/gi, "").replace(/[0-9]/gi, "").replace(/[\{\}\[\]\/?.,;:|\)*~`!^\-_+<>@\#$%&\\\=\(\'\"]/gi, "").replace(/\s/gi, "").replace(/\s/gi, "").replace(/(\r\n\t|\n|\r\t)/gm,"");;
+        var korean = content.replace(/[a-zA-Z]/gi, "").replace(/[0-9]/gi, "").replace(/[\{\}\[\]\/?.,;:|\)*~`!^\-_+<>@\#$%&\\\=\(\'\"]/gi, "").replace(/\s/gi, "").replace(/(\r\n\t|\n|\r\t)/gm,"");
+        var number = content.replace(/[a-zA-Z]/gi, "").replace(/[ㄱ-ㅎ|ㅏ-ㅣ|가-힣]/gi, "").replace(/[\{\}\[\]\/?.,;:|\)*~`!^\-_+<>@\#$%&\\\=\(\'\"]/gi, "").replace(/\s/gi, "").replace(/(\r\n\t|\n|\r\t)/gm,"");
+        var special = content.replace(/[a-zA-Z]/gi, "").replace(/[ㄱ-ㅎ|ㅏ-ㅣ|가-힣]/gi, "").replace(/[0-9]/gi, "").replace(/\s/gi, "").replace(/(\r\n\t|\n|\r\t)/gm,"");
+        var space =  content.replace(/[a-zA-Z]/gi, "").replace(/[ㄱ-ㅎ|ㅏ-ㅣ|가-힣]/gi, "").replace(/[\{\}\[\]\/?.,;:|\)*~`!^\-_+<>@\#$%&\\\=\(\'\"]/gi, "").replace(/[0-9]/gi, "").replace(/(\r\n\t|\n|\r\t)/gm,"");
+        var line = content.replace(/[a-zA-Z]/gi, "").replace(/[ㄱ-ㅎ|ㅏ-ㅣ|가-힣]/gi, "").replace(/[\{\}\[\]\/?.,;:|\)*~`!^\-_+<>@\#$%&\\\=\(\'\"]/gi, "").replace(/[0-9]/gi, "").replace(/ /gi, "");
+        return english.length + (korean.length * 3) +  number.length + special.length + space.length + (line.length * 2);
+    }
+
+    function onInput() {
+        let content = textarea.value
+
+        localStorage.setItem("save", content);
+        var byte = countByte(content)
+        countAll.innerHTML = content.length + "자, " + byte + "바이트";
+    }    
+
+    window.onload = init;
+
+    function getSelectionText() {
+        var text = "";
+        var activeEl = document.activeElement;
+        var activeElTagName = activeEl ? activeEl.tagName.toLowerCase() : null;
+        if (activeElTagName == "textarea") {
+            text = activeEl.value.slice(activeEl.selectionStart, activeEl.selectionEnd);
         }
+        return text;
+    }
 
-        function onInput() {
-            let content = textarea.value
-
-            localStorage.setItem("save", content);
-            var byte = countByte(content)
-            countAll.innerHTML = content.length + "자, " + byte + "바이트";
-        }    
-
-        window.onload = init;
-
-        function getSelectionText() {
-            var text = "";
-            var activeEl = document.activeElement;
-            var activeElTagName = activeEl ? activeEl.tagName.toLowerCase() : null;
-            if (activeElTagName == "textarea") {
-                text = activeEl.value.slice(activeEl.selectionStart, activeEl.selectionEnd);
-            }
-            return text;
+    document.onmouseup = document.onkeyup = document.onselectionchange = function() {
+        var text = getSelectionText()
+        if (!text) {
+            countSelection.innerHTML = ""
+            return
         }
-
-        document.onmouseup = document.onkeyup = document.onselectionchange = function() {
-            var text = getSelectionText()
-            if (!text) {
-                countSelection.innerHTML = ""
-                return
-            }
-            countSelection.innerHTML = "선택된 텍스트: " + text.length + "자, " + countByte(text) + "바이트";
-        };
-        </script>
-    </body>
+        countSelection.innerHTML = "선택된 텍스트: " + text.length + "자, " + countByte(text) + "바이트";
+    };
+    </script>
+</body>
 </html>
