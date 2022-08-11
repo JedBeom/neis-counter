@@ -86,13 +86,21 @@ p {
 
 }
 
-.result {
+#result {
     font-family: 'Noto Sans KR Bold';
     font-size: 20pt;
     letter-spacing: -1.25px;
     color: #1d1a1a;
+    display: flex;
+}
+
+#count-all {
     text-align: right;
-    margin-top: 20px;
+}
+
+#count-selection {
+    color: salmon;
+    float: left; 
 }
 
 table {
@@ -103,6 +111,7 @@ table {
     border: 1px solid #fff;
     font-size: 14pt;
     margin-top: 20px;
+    margin-bottom: 20px;
 }
 
 th {
