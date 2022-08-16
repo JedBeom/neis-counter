@@ -27,6 +27,11 @@
     </header>
     <main>
         <textarea oninput="onInput()" id="counter"></textarea>
+        <div id="result">
+            <p id="count-selection"></p>
+            <p id="count-all">0자, 0바이트</p>
+        </div>
+        <span class="info">영어, 숫자, 특수문자, 띄어쓰기 1바이트 / 엔터키 2바이트 / 한글 3바이트</span>
         <table>
                 <tr>
                     <th>항목</td>
@@ -45,11 +50,6 @@
                     <td>1500Bytes</td>
                 </tr>
         </table>
-        <div id="result">
-            <p id="count-selection"></p>
-            <p id="count-all">0자, 0바이트</p>
-        </div>
-        <span class="info">영어, 숫자, 특수문자, 띄어쓰기 1바이트 / 엔터키 2바이트 / 한글 3바이트</span>
     </main>
     <footer>
         <span>Original work by <a href="https://github.com/hjh010501/">kidevelop</a></span> |

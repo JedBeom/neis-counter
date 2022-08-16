@@ -18,6 +18,15 @@
     url(https://fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Bold.otf) format('opentype');
 }
 
+* {
+    font-family: 'Noto Sans KR';
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
 textarea::-moz-selection { /* Code for Firefox */
     color: white;
     background: salmon;
@@ -28,38 +37,9 @@ textarea::selection {
     background: salmon;
 }
 
-* {
-    font-family: 'Noto Sans KR';
-}
-
-a {
-    text-decoration: none;
-    font-weight: 600;
-    color: #1d1a1a;
-    letter-spacing: -1px;
-}
-
-body {
-    margin: 0;
-    padding: 0;
-}
-
-p {
-    text-align: left;
-    width: 100%;
-    margin-top: 0.5rem;
-    margin-bottom: 0rem;
-}
-
-main, header {
+header, main {
     margin: 20px auto 20px auto;
     width: 800px;
-}
-
-main {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
 }
 
 header {
@@ -71,6 +51,19 @@ header {
 header h1 {
     font-size: 20pt;
     margin-bottom: 0;
+}
+
+p {
+    text-align: left;
+    width: 100%;
+    margin-top: 0.5rem;
+    margin-bottom: 0rem;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .title_underbar {
@@ -94,15 +87,6 @@ textarea {
     line-height: 25px;
 }
 
-.info {
-    width: 100%;
-    font-size: 12pt;
-    color:#aaa;
-    letter-spacing: -1.25px;
-    float: right;
-    text-align: right;
-}
-
 #result {
     width: 100%;
     font-weight: 600;
@@ -119,6 +103,15 @@ textarea {
 #count-selection {
     color: salmon;
     float: left; 
+}
+
+.info {
+    width: 100%;
+    font-size: 12pt;
+    color:#aaa;
+    letter-spacing: -1.25px;
+    float: right;
+    text-align: right;
 }
 
 table {
@@ -148,4 +141,11 @@ td {
 footer {
     width: 800px;
     margin: 60px auto 30px auto;
+}
+
+footer a {
+    text-decoration: none;
+    font-weight: 600;
+    color: #1d1a1a;
+    letter-spacing: -1px;
 }
