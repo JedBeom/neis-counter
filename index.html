@@ -18,14 +18,14 @@
     <title>나이스(NEIS) 글자수 계산기++</title>
 </head>
 <body>
-    <div class="center">
-        <header>
-            <h1>🍴나이스(NEIS) 글자수 계산기++</h1>
-            <p>드래그해서 글씨를 선택해 보세요.</p>
-        </header>
+    <header>
+        <h1>🍴나이스(NEIS) 글자수 계산기++</h1>
+        <p>드래그해서 글씨를 선택해 보세요.</p>
         <div class="title_underbar_wrapper">
-        <div class="title_underbar"></div>
+            <div class="title_underbar"></div>
         </div>
+    </header>
+    <main>
         <textarea oninput="onInput()" id="counter"></textarea>
         <table>
                 <tr>
@@ -49,14 +49,12 @@
             <p id="count-selection"></p>
             <p id="count-all">0자, 0바이트</p>
         </div>
-        <span style="font-size: 12pt; color:#aaa; font-family: 'Noto Sans KR'; letter-spacing: -1.25px; float: right; text-align: right;">영어, 숫자, 특수문자, 띄어쓰기 1바이트 / 엔터키 2바이트 / 한글 3바이트</span>
-    </div>
-    <div class="footbar">
-    <div class="footbar_content">
-        <span style="text-align: left;">Original work by <a href="https://github.com/hjh010501/">kidevelop</a></span> |
-        <span style="text-align: left;">Fork by <a href="https://github.com/JedBeom/">JedBeom</a></span>
-    </div>
-    </div>
+        <span class="info">영어, 숫자, 특수문자, 띄어쓰기 1바이트 / 엔터키 2바이트 / 한글 3바이트</span>
+    </main>
+    <footer>
+        <span>Original work by <a href="https://github.com/hjh010501/">kidevelop</a></span> |
+        <span>Fork by <a href="https://github.com/JedBeom/">JedBeom</a></span>
+    </footer>   
     <script>
     var textarea = document.getElementById('counter')
     var countAll = document.getElementById('count-all')
