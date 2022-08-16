@@ -37,9 +37,10 @@ textarea::selection {
     background: salmon;
 }
 
-header, main {
-    margin: 20px auto 20px auto;
-    width: 800px;
+header, main, footer {
+    margin: 0.25rem auto 0.25rem auto;
+    max-width: 800px;
+    width: 90%;
 }
 
 header {
@@ -49,7 +50,7 @@ header {
 }
 
 header h1 {
-    font-size: 20pt;
+    font-size: 1.75em;
     margin-bottom: 0;
 }
 
@@ -67,31 +68,35 @@ main {
 }
 
 .title_underbar {
-    width: 30px;
-    height: 4px;
+    width: 1.25em;
+    height: 0.25em;
     background: #1d1d1d;
-    margin-top: 20px;
-    margin-bottom: 20px;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
 }
 
 textarea {
     font-family: 'Noto Sans KR';
-    font-size: 11pt;
+    font-size: 1em;
     border: 0;
     resize: none;
     border: 1px solid #ddd;
-    width: 800px;
-    height: 400px;
+    max-width: 800px;
+    max-height: 400px;
+
+    width: 100%;
+    height: 30em;
+
     outline: 0;
-    padding: 25px;
-    line-height: 25px;
+    padding: 1.25em;
+    line-height: 1.5em;
 }
 
 #result {
     width: 100%;
     font-weight: 600;
-    font-size: 20pt;
-    letter-spacing: -1.25px;
+    font-size: 1.5em;
+    letter-spacing: -0.05em;
     color: #1d1a1a;
     display: flex;
 }
@@ -107,40 +112,40 @@ textarea {
 
 .info {
     width: 100%;
-    font-size: 12pt;
+    font-size: 0.75em;
     color:#aaa;
-    letter-spacing: -1.25px;
+    letter-spacing: -0.075em;
     float: right;
     text-align: right;
 }
 
 table {
+    overflow: scroll;
     width: 100%;
     text-align: center;
     font-family: 'Noto Sans KR';
-    letter-spacing: -1.25px;
+    letter-spacing: -0.1em;
     border: 1px solid #fff;
-    font-size: 14pt;
-    margin-top: 20px;
-    margin-bottom: 20px;
+    font-size: 1em;
+    margin-top: 0.5em;
+    margin-bottom: 1em;
 }
 
 th {
     background: #1d1d1d;
     font-weight: 400;
     color: #fff;
-    padding: 10px;
+    padding: 0.5em;
 }
 
 td {
     background-color: #ededed;
     color: #1d1d1d;
-    padding: 10px;
+    padding: 0.5em;
 }
 
 footer {
-    width: 800px;
-    margin: 60px auto 30px auto;
+    font-size: 1em;
 }
 
 footer a {
